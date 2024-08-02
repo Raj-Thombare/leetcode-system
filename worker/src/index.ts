@@ -25,7 +25,7 @@ async function startWorker() {
             try {
                 const submission = await client.brPop('submissions', 0);
                 // @ts-ignore
-                await processSubmission(submission);
+                await processSubmission(submission.element);
             } catch (error) {
                 console.error("Error processing submission:", error);
             }
